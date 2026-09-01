@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selvarani Readymades — Customer Reviews</title>
+  
+  <!-- Google Fonts: Fraunces, Inter, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER / AWNING -->
+  <header class="awning">
+    <div class="awning-inner">
+      <div class="header-top">
+        <div class="logo-badge">
+          <img src="assets/images/logo.jpg" alt="Selvarani Super Shopping logo">
+        </div>
+        <div class="header-text">
+          <span class="eyebrow">Selvarani Super Shopping · customer reviews</span>
+          <h1 class="shopname">Selvarani Readymades</h1>
+        </div>
+      </div>
+      <p class="tagline">House of readymade garments · Tenkasi Road, Rajapalayam</p>
+      <p class="shop-address">
+        <span><i>📍</i> 827 &amp; 828, Tenkasi Road, Near Nanayam Super Market, Rajapalayam – 626117</span>
+        <span>☎ 04563 222640</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- SUMMARY STAMP ROW (HERO STATISTICS) -->
+  <div class="summary-row wrap">
+    <div class="stamp-card">
+      <div class="stamp-number" id="avgScore">–</div>
+      <div class="stamp-meta">
+        <strong>Average rating</strong>
+        <span class="stars-line" id="avgStars">☆☆☆☆☆</span>
+      </div>
+    </div>
+    <div class="stamp-card">
+      <div class="stamp-number" id="totalCount">0</div>
+      <div class="stamp-meta">
+        <strong>Reviews written</strong>
+        <span>by real customers</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="wrap">
+
+    <!-- LEAVE A REVIEW SECTION -->
+    <section class="leave-review">
+      <h2 class="section-title">Leave a review</h2>
+      <p class="section-sub">Shopped with us recently? Everyone who visits this page can read what you write.</p>
+
+      <form id="reviewForm">
+        <div class="field">
+          <label for="nameInput">Your name</label>
+          <input type="text" id="nameInput" placeholder="Priya Nair" maxlength="60" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label>Rating</label>
+          <div class="star-picker" id="starPicker">
+            <button type="button" data-val="1" aria-label="1 star">☆</button>
+            <button type="button" data-val="2" aria-label="2 stars">☆</button>
+            <button type="button" data-val="3" aria-label="3 stars">☆</button>
+            <button type="button" data-val="4" aria-label="4 stars">☆</button>
+            <button type="button" data-val="5" aria-label="5 stars">☆</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="textInput">Your review</label>
+          <textarea id="textInput" placeholder="What stood out about your visit?" maxlength="2000" required></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="primary">Post review</button>
+          <span class="form-error" id="formError">Add your name, a rating, and a few words first.</span>
+          <span class="form-success" id="formSuccess">Posted — thank you.</span>
+        </div>
+      </form>
+    </section>
+
+    <!-- REVIEWS BOARD SECTION -->
+    <section class="board-section">
+      <div class="board-header">
+        <h2 class="section-title" style="margin:0;">What customers are saying</h2>
+        <span class="board-count" id="boardCount"></span>
+      </div>
+      <div class="board" id="board">
+        <div class="loading-state">Loading reviews…</div>
+      </div>
+    </section>
+
+  </main>
+
+  <p class="notice">Customer review page — reviews here are stored in the database and visible to all visitors.</p>
+
+  <!-- CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <h3 class="modal-title" id="modalTitle">Confirm your review</h3>
+      <p class="modal-prompt">Are you sure you want to post this review?</p>
+
+      <div class="modal-preview">
+        <div class="modal-preview-name" id="modalPreviewName"></div>
+        <div class="modal-preview-stars" id="modalPreviewStars"></div>
+        <p class="modal-preview-text" id="modalPreviewText"></p>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="secondary" id="modalCancelBtn">Cancel</button>
+        <button type="button" class="primary" id="modalConfirmBtn">Confirm &amp; Post</button>
+      </div>
+
+      <div class="modal-error" id="modalError"></div>
+    </div>
+  </div>
+
+  <!-- Vanilla JS Review Controller -->
+  <script src="assets/js/reviews.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/get-reviews"
+  to = "/.netlify/functions/get-reviews"
+  status = 200
+
+[[redirects]]
+  from = "/api/submit-review"
+  to = "/.netlify/functions/submit-review"
+  status = 200

@@ -1,0 +1,26 @@
+{
+  "name": "shop-review-netlify",
+  "version": "1.0.0",
+  "description": "Selvarani Readymades - Customer Reviews Website on Netlify with Netlify Database",
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.0",
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-database",
+    "netlify-functions",
+    "postgresql",
+    "reviews"
+  ],
+  "author": "",
+  "license": "ISC"
+}
